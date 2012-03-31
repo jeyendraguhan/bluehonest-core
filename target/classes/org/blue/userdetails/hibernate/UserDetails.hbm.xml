@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 30, 2012 10:11:38 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="org.blue.userdetails.model.UserDetails" table="USERDETAILS">
+  <id name="userId" type="java.lang.Integer">
+   <column name="USERID"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="userName" type="java.lang.String">
+   <column name="USERNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="addressId" type="java.lang.Integer">
+   <column name="ADDRESSID"/>
+  </property>
+  <property generated="never" lazy="false" name="phoneNo" type="java.lang.Integer">
+   <column name="PHONENO"/>
+  </property>
+  <property generated="never" lazy="false" name="regDate" type="java.util.Date">
+   <column name="REGDATE"/>
+  </property>
+  <one-to-one cascade="save-update"
+   class="org.blue.userdetails.model.LoginDetails" name="loginDetails"/>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 30, 2012 10:40:52 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="org.blue.userdetails.model.LoginDetails" table="LOGINDETAILS">
+  <id name="userId" type="java.lang.Integer">
+   <column name="USERID"/>
+   <generator class="foreign">
+    <param name="property">user</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="firstName" type="java.lang.String">
+   <column name="FIRSTNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="lastName" type="java.lang.String">
+   <column name="LASTNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="password" type="java.lang.String">
+   <column name="PASSWORD"/>
+  </property>
+  <one-to-one class="org.blue.userdetails.model.UserDetails"
+   constrained="true" name="user"/>
+ </class>
+</hibernate-mapping>
